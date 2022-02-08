@@ -18,7 +18,7 @@ Actor::~Actor()
 {
 }
 
-void Actor::Tick()
+void Actor::Tick(SDL_Event& MyEvent)
 {
 }
 

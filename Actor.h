@@ -13,11 +13,11 @@ public:
 
 		virtual ~Actor();
 
-		virtual void Tick();
+		virtual void Tick(SDL_Event& MyEvent);
 		virtual void Render(SDL_Renderer* MyRenderer);
 		virtual void BeginPlay();
 
-		inline virtual void SetAcorLocation(int X, int Y);
+		inline virtual void SetAcorLocation(int NewX, int NewY);
 		inline virtual void SetShape(char NewShape);
 		inline virtual char GetShape() { return Shape; }
 		inline virtual int GetX() { return X; }
