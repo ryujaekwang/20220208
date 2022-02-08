@@ -78,23 +78,40 @@ int SDL_main(int argc, char* argv[])
 
 		//노란색 원 그리기
 
-		int Radius = 50;
-		int PositionX = 350;
-		int PositionY = 350;
+	/*	int Radius = 100;
+		int PositionX = 400;
+		int PositionY = 400;
 		SDL_SetRenderDrawColor(MyRenderer, 0xff, 0xff, 0x00, 0);
 		int OldX = sin(3.14f / 180.0f * 0.0f) * Radius;
-		int OldY = cos(3.14f / 180.0f * 0.0f) * Radius;
+		int OldY = cos(3.14f / 180.0f * 0.0f) * Radius;*/
 
-		for (int Angle = 1; Angle < 360; ++Angle)
-		{
-			int X1 = OldX;
-			int Y1 = OldY;
-			int X2 = sin(3.14f / 180.0f * Angle)* Radius;
-			int Y2 = cos(3.14f / 180.0f * Angle)* Radius;
+		//for (int Angle = 1; Angle < 360; ++Angle)
+		//{
+		//	int X1 = OldX;
+		//	int Y1 = OldY;
+		//	int X2 = sin(3.14f / 180.0f * Angle)* Radius;
+		//	int Y2 = cos(3.14f / 180.0f * Angle)* Radius;
 
-			SDL_RenderDrawLine(MyRenderer, X1+PositionX, Y1+ PositionY, X2+PositionX, Y2+PositionY);
-			OldX = X2;
-			OldY = Y2;
+		//	SDL_RenderDrawLine(MyRenderer, X1+PositionX, Y1+ PositionY, X2+PositionX, Y2+PositionY);
+
+		//	OldX = X2;
+		//	OldY = Y2;
+
+
+		SDL_SetRenderDrawColor(MyRenderer, 128, 128, 128, 0);
+		int Radius = 250;
+		int PositionX = 400;
+		int PositionY = 400;
+
+			for (int Angle = 0; Angle <= 180; ++Angle)
+			{
+				int X1 = sin(3.14f / 180.0f * Angle) * Radius;
+				int Y1 = cosf(3.14f / 180.0f * Angle) * Radius;
+				int X2 = sin(3.14f / 180.0f * (360-Angle)) * Radius;
+				int Y2 = cosf(3.14f / 180.0f * (360-Angle)) * Radius;
+
+				SDL_RenderDrawLine(MyRenderer, X1 + PositionX, Y1 + PositionY, X2 + PositionX, Y2 + PositionY);
+
 
 		}
 
