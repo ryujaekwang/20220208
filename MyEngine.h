@@ -1,13 +1,18 @@
 #pragma once
 #include< string>
+#include"SDL.h"
 
 class World;
 
 class MyEngine
 {
 public:
-	MyEngine();
+	//MyEngine();
+	MyEngine(std::string Title, std::string LevelName, int Width , int Height);
 	virtual ~MyEngine();
+
+	void Init(std::string Title, int Width, int Height);
+	void Term();
 
 	void Run();
 
@@ -29,5 +34,14 @@ protected:
 protected:
 	bool bIsRunning = true;
 	World* CurrentWorld;
+
+	SDL_Window* MyWindow;
+	SDL_Renderer* MyRenderer;
+	SDL_Event MyEvent;
+
+
+
+
+
 };
 
