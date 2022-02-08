@@ -8,5 +8,7 @@ public:
 
 	virtual ~Wall();
 
+	virtual void Render(SDL_Renderer* MyRenderer) override;
+
 };
 

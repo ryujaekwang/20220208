@@ -1,4 +1,6 @@
 #pragma once
+#include"SDL.h"
+
 class Actor
 {
 public:
@@ -12,7 +14,7 @@ public:
 		virtual ~Actor();
 
 		virtual void Tick();
-		virtual void Render();
+		virtual void Render(SDL_Renderer* MyRenderer);
 		virtual void BeginPlay();
 
 		inline virtual void SetAcorLocation(int X, int Y);
@@ -29,6 +31,9 @@ protected:
 		int X;
 		int Y;
 		char Shape;
+		SDL_Color Color;
+		int TileSize = 30;
+			 
 
 
 

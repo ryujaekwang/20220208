@@ -22,12 +22,19 @@ void Actor::Tick()
 {
 }
 
-void Actor::Render()
+
+void Actor::Render(SDL_Renderer* MyRenderer)
 {
 	//static ¸â¹ö ÇÔ¼ö
-	Util::GotoXY(GetX(), GetY());
+	//Util::GotoXY(GetX(), GetY());
 
-	std::cout << GetShape() << std::endl;
+	//std::cout << GetShape() << std::endl;
+
+
+	SDL_SetRenderDrawColor(MyRenderer, Color.r, Color.g, Color.b, Color.a);
+	SDL_Rect Rect = { GetX() * TileSize, GetY() * TileSize,  TileSize,  TileSize };
+
+	SDL_RenderFillRect(MyRenderer, &Rect);
 }
 
 void Actor::BeginPlay()

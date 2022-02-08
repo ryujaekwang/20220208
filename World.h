@@ -1,5 +1,9 @@
 #pragma once
 #include <vector>
+#include "SDL.h"
+
+
+
 class World
 {
 public:
@@ -10,9 +14,9 @@ public:
 	void DestroyActor(class Actor* DestroyActor);
 
 	void Tick();
-	void Render();
+	void Render(SDL_Renderer* MyRenderer);
 	void Input();
-	void beginPlay();
+	void BeginPlay();
 
 	const std::vector<class Actor*>& GetAcorList() { return ActorList; }
 
